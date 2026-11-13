@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include<string>
+#include<sstream>
 using namespace std;
 int main()
 {
@@ -61,17 +62,120 @@ int main()
     string fragment = tekst.substr(a, b);
     cout << fragment;*/
     /*zadanie8
-   string tekst = "2026 - 11 - 10";
+    cout << "podaj date w formacie RRRR-MM_DD: ";
+    string tekst;
+    getline(cin, tekst);
    cout << tekst << endl;
-   int pozycja= tekst.find("2026", 0);
-   string rok = tekst.substr(pozycja, 4);
+   string rok = tekst.substr(0, 4);
    cout << "rok: " << rok << endl;
-   int pozycja2 = tekst.find("11", 0);
-   string miesiac = tekst.substr(pozycja2, 2);
+   string miesiac = tekst.substr(5, 2);
    cout << "miesiac: " << miesiac << endl;
-   int pozycja3 = tekst.find("10", 0);
-   string dzien = tekst.substr(pozycja3, 2);
+   string dzien = tekst.substr(8, 2);
    cout << "dzien: " << dzien << endl;*/
+   /*zadanie9
+   cout << "podaj jakikolwiek tekst: ";
+   string tekst;
+   getline(cin, tekst);
+   cout << "podaj szukana fraze: ";
+   string fraza;
+   getline(cin, fraza);
+   int pozycja = tekst.find(fraza, 0);
+   if (pozycja != -1) {
+       cout << "znaleziono szukana fraze na pozycji: " << pozycja<<endl;
+   }
+   else {
+       cout << "nie znaleziono szukanej frazy:(";
+   }*/
+   /*zadanie10
+   cout << "podaj adres email: ";
+   string email;
+   getline(cin, email);
+   int malpa = email.find("@", 0);
+   string domena = email.substr(malpa+1);
+   string poczatek = email.substr(0, malpa);
+   cout << "nazwa uzytkownika: " << poczatek << endl;
+   cout << "domena: " << domena << endl;*/
+   /*zadanie11
+      cout << "podaj imie: ";
+      string imie;
+      getline(cin, imie);
+      cout << "podaj nazwisko: ";
+      string nazwisko;
+      getline(cin, nazwisko);
+      string nazwa;
+      nazwa = imie + " " + nazwisko;
+      cout << "imie i nazwisko: " << nazwa << "\n";
+      int dlugosc = nazwa.length();
+      cout << "dlugosc twojego imienia i nazwiska (bez spacji): " << dlugosc - 1;*/
+      /*zadanie12
+     string liczba;
+     cout << "podaj liczbe: ", cin >> liczba;
+     int niechar = stoi(liczba);
+     cout << niechar << " " << 2 * niechar << " " << niechar + 10;*/
+     /*zadanie13
+     int nowy;
+     for (int i = 0;i < 5;i++) {
 
+         cout << "podaj cene produktu: ";
+         string cena;
+         getline(cin, cena);
+         double wartosc = stod(cena);
+         cout << "cena to: " << wartosc << endl;
+         nowy = (int)wartosc;
+     }
+     cout << "ostatnia cena w incie: " << nowy << endl;*/
+     /*zadanie14
+    string napis = "12.5";
+    int liczba = stoi(napis);
+    cout << liczba;*/
+/*zadanie15
+cout << "podaj liczbe: ";
+string tekst;
+getline(cin,tekst);
+try {
+    int liczba = stoi(tekst);
+    cout << liczba;
 }
+catch (...) {
+    cout << "nieprawidlowy zapis";
+}*/
+/*zadanie16
+cout << "podaj wiek: ";
+string wiek;
+getline(cin, wiek);
+try {
+    int lata = stoi(wiek);
+    if (lata > 150 || lata < 0) {
+        cout << "tacy ludzie nie istnieja:(";
+    }
+    else {
+        cout << "prawidlowy wiek:)";
+    }
+}
+catch (...) {
+    cout << "nieprawidlowy zapis liczby";
+}*/
+/*zadanie17
+cout << "podaj imie nazwisko i wiek w podanym formacie: imie nazwisko;wiek :" << endl;
+string dane;
+getline(cin, dane);
+int srednik = dane.find(";", 0);
+string nazwa = dane.substr(0, srednik);
+string wiek = dane.substr(srednik + 1);
+int wiekint = stoi(wiek);
+if (wiekint < 150 && wiekint > 0) {
+    cout << "imie i nazwisko: " << nazwa << " wiek: " << wiekint;
+}
+else {
+    cout << "be for real:|";
+}*/
+/*zadanie18*/
+string zmienna = "10 20 30";
+stringstream liczby(zmienna);
+int a, b, c;
+liczby>> a >> b >> c;
+cout << a + b + c << endl;
+cout <<static_cast<double> (a + b + c) / 3 << endl;
+}
+
 
